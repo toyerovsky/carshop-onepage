@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -33,15 +34,55 @@
     font-family: 'Roboto', sans-serif;
   }
 
+  .mobile-navigation-container {
+    background-color: #ffffff;
+    position: fixed;
+    min-height: 100vh;
+    padding: 1rem 2rem;
+    max-width: 20rem;
+    top: 0;
+    right: 0;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    z-index: 2147483647;
+    transition: transform 0.4s;
+    transform: translateX(100%);
+  }
+
+  .active {
+    transform: translateX(0);
+  }
+
+  .mobile-navigation ul {
+    flex-direction: column;
+  }
+
+  .mobile-navigation ul li a {
+    line-height: 3em;
+    font-size: 1.3em;
+  }
+
   nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow-y: scroll;
     display: flex;
+    background: #fff;
     justify-content: space-between;
     font-size: 22px;
-    padding: 0.25em 0.75em;
+    padding-top: 0.25em;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+    min-height: 80px;
   }
 
   a {
     text-decoration: none;
+  }
+
+  section:first-of-type {
+    margin-top: 120px;
   }
 
   .brand-name {
@@ -54,17 +95,19 @@
     align-items: center;
   }
 
-  .navbar-nav ul {
+  ul.navigation-links {
     display: flex;
     list-style-type: none;
+    flex-wrap: wrap;
+    padding-left: 1em;
   }
 
-  .navbar-nav ul li {
-    padding: 0 1.25em 0 1.25em;
+  ul.navigation-links li {
+    padding: 0 1em 0 1em;
     text-align: center;
   }
 
-  .navbar-nav ul a:hover, .navbar-nav ul a:focus {
+  ul.navigation-links a:hover, ul.navigation-links a:focus {
     color: #4d4d4d;
   }
 
@@ -90,7 +133,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    word-break: break-word;
   }
 
   .btn-primary, .btn-primary:active {
@@ -187,6 +229,37 @@
     width: 25%;
   }
 
+  .display-none {
+    display: none;
+  }
+
+  .hide-not-mobile {
+    display: none;
+  }
+
+  .hamburger {
+    color: #4fa8ff;
+    margin-right: 1em;
+    font-size: 1.8em;
+  }
+
+  .close {
+    color: #4fa8ff;
+    font-size: 2.5em;
+  }
+
+  .mask {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-image: none !important;
+    animation-name: i-amphtml-sidebar-mask-fade-out;
+    z-index: 2147483646;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   @media only screen and (max-width: 768px) {
     .row {
       max-width: 720px;
@@ -199,20 +272,29 @@
     .row {
       max-width: 960px;
     }
+
+    .hide-mobile {
+      display: none !important;
+    }
+
+    .hide-not-mobile {
+      display: block;
+    }
   }
 </style>
 
+<div id="mask" class="mask display-none"></div>
 
 <nav>
   <div class="navbar-nav">
-    <a href="https://www.boschcarservice.com/pl/pl">
+    <a href="https://www.boschcarservice.com/">
       <img class="logo" alt="logo Bosch Car Service" title="logo Bosch Car Service" src="img/bcs-logo-100x101.png">
     </a>
-    <a href="https://www.boschcarservice.com/pl/pl" class="brand-name">MWM Carmaster</a>
+    <a href="https://www.boschcarservice.com/" class="brand-name">MWM Carmaster</a>
   </div>
 
   <div class="navbar-nav">
-    <ul>
+    <ul class="navigation-links hide-mobile">
       <li><a href="#">Start</a></li>
       <li><a href="#">Usługi</a></li>
       <li><a href="#">Cennik</a></li>
@@ -221,6 +303,35 @@
       <li><a href="#">O nas</a></li>
       <li><a href="#">Kontakt</a></li>
     </ul>
+    <a class="btn btn-sm btn-secondary hide-mobile" href="tel:605101100"><span
+      class="icon-phone"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                              width="22"
+                              height="22" viewBox="0 0 32 32" fill="currentColor">
+    <path
+      d="M18 26c0 1.104-0.896 2-2 2s-2-0.896-2-2 0.896-2 2-2 2 0.896 2 2zM15 4h2c1.36 0 1.312 2 0 2h-2c-1.348 0-1.314-2 0-2zM9 0c-1.644 0-3 1.356-3 3v26c0 1.644 1.356 3 3 3h14c1.644 0 3-1.356 3-3v-26c0-1.644-1.356-3-3-3zM9 2h14c0.572 0 1 0.428 1 1v26c0 0.572-0.428 1-1 1h-14c-0.572 0-1-0.428-1-1v-26c0-0.572 0.428-1 1-1z"></path></svg></span>
+      <span>605-101-100</span></a>
+
+    <a href="javascript:void(0);" class="hamburger hide-not-mobile" onclick="toggleLinks()">
+      <i class="bi bi-list"></i>
+    </a>
+  </div>
+</nav>
+
+<div id="mobile-navigation-container" class="mobile-navigation-container hide-not-mobile">
+  <a href="javascript:void(0);" class="close" onclick="toggleLinks()">
+    <i class="bi bi-x"></i>
+  </a>
+  <div class="mobile-navigation">
+    <ul class="navigation-links">
+      <li><a href="#">Start</a></li>
+      <li><a href="#">Usługi</a></li>
+      <li><a href="#">Cennik</a></li>
+      <li><a href="#">Aktualności</a></li>
+      <li><a href="#">Floty</a></li>
+      <li><a href="#">O nas</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+
     <a class="btn btn-sm btn-secondary" href="tel:605101100"><span
       class="icon-phone"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                               width="22"
@@ -229,7 +340,7 @@
       d="M18 26c0 1.104-0.896 2-2 2s-2-0.896-2-2 0.896-2 2-2 2 0.896 2 2zM15 4h2c1.36 0 1.312 2 0 2h-2c-1.348 0-1.314-2 0-2zM9 0c-1.644 0-3 1.356-3 3v26c0 1.644 1.356 3 3 3h14c1.644 0 3-1.356 3-3v-26c0-1.644-1.356-3-3-3zM9 2h14c0.572 0 1 0.428 1 1v26c0 0.572-0.428 1-1 1h-14c-0.572 0-1-0.428-1-1v-26c0-0.572 0.428-1 1-1z"></path></svg></span>
       <span>605-101-100</span></a>
   </div>
-</nav>
+</div>
 
 <section>
   <div class="row">
@@ -353,6 +464,19 @@
   ga('set', 'anonymizeIp', true);
   ga('set', 'transport', 'beacon');
   ga('send', 'pageview')
+
+  function toggleLinks() {
+    let mobileNavigation = document.getElementById("mobile-navigation-container");
+
+    if (mobileNavigation.classList.contains('active')) {
+      mobileNavigation.classList.remove('active');
+    } else {
+      mobileNavigation.classList.add('active');
+    }
+
+    let mask = document.getElementById("mask");
+    mask.style.display = mask.style.display === "block" ? "none" : "block";
+  }
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
