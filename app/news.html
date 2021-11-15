@@ -34,6 +34,12 @@
     font-family: 'Roboto', sans-serif;
   }
 
+  section ul {
+    margin: 0;
+    list-style-type: "- ";
+    padding-left: 1em;
+  }
+
   .mobile-navigation-container {
     background-color: #ffffff;
     position: fixed;
@@ -134,18 +140,6 @@
     justify-content: center;
   }
 
-  .btn-primary, .btn-primary:active {
-    background-color: #4fa8ff;
-    border-color: #4fa8ff;
-    color: #ffffff;
-  }
-
-  .btn-primary:hover, .btn-primary:focus {
-    color: #ffffff;
-    background-color: #0282ff;
-    border-color: #0282ff;
-  }
-
   .btn-secondary, .btn-secondary:active {
     background-color: #04262b;
     border-color: #04262b;
@@ -171,13 +165,8 @@
   .row {
     display: flex;
     flex-direction: row;
-    max-width: 1140px;
+    max-width: 900px;
     margin: 1em auto;
-  }
-
-  .gmap {
-    width: 100%;
-    min-height: 400px;
   }
 
   .subcontent {
@@ -207,11 +196,16 @@
   .content-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: justify;
   }
 
   .content-item p {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  .content-item li {
+    font-size: 1.2em;
     line-height: 1.6;
   }
 
@@ -222,12 +216,7 @@
 
   .content-item h3 {
     font-weight: 300;
-    font-size: 1.3em;
-  }
-
-  .content-item-icon {
-    color: #37a5bf;
-    font-size: 4em;
+    font-size: 1.6em;
   }
 
   .content-item img {
@@ -267,14 +256,6 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .gap10 {
-    gap: 1em;
-  }
-
-  .col4 {
-    width: 25%;
-  }
-
   @media only screen and (max-width: 768px) {
     .row {
       max-width: 720px;
@@ -296,12 +277,6 @@
       display: block;
     }
 
-    section {
-      margin-left: 4em;
-      margin-right: 4em;
-      text-align: center;
-    }
-
     .subcontent {
       margin-left: initial;
     }
@@ -309,10 +284,6 @@
     .content-item {
       margin-top: 0.5em;
       margin-bottom: 0.5em;
-    }
-
-    .col4 {
-      width: 100%;
     }
   }
 </style>
@@ -376,96 +347,92 @@
   </div>
 </div>
 
-<section>
+<section class="main-content">
   <div class="row">
-    <div>
-      <img alt="Wszystko czego potrzebuje Twoje auto" title="Wszystko czego potrzebuje Twoje auto"
-           src="img/podglad-561x600.jpg">
-    </div>
-    <div class="subcontent">
-      <h1>Warsztat samochodowy Bosh Car Service MWM Carmaster</h1>
-      <p>Jesteśmy autoryzowanym warsztatem samochodowym sieci BOSCH CAR SERVICE w Kielcach. Bosch Service to marka z
-        wieloletnią tradycją, słynąca na świecie z wysokiego standardu oferowanych usług. Szukasz dobrego mechanika
-        samochodowego? Potrzebujesz zaufanego serwisu? Profesjonalizm i wysoka jakość usług jest naszym
-        najważniejszym.</p>
-      <a class="btn btn-sm btn-primary" href="#">Więcej...</a>
+    <div class="content-item">
+      <p>Obsługujemy samochody wszystkich marek w zakresie napraw mechanicznych i elektrycznych. Diagnozujemy i usuwamy
+        usterki wszystkich układów samochodowych. Wykonujemy bieżące obsługi techniczne z wymianą oleju i filtrów.
+        Montujemy akcesoria i dodatkowe wyposażenie pojazdów. </p>
     </div>
   </div>
 
   <div class="row">
     <div class="content-item">
-      <span class="content-item-icon">
-        <svg width="64" height="64" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-          <path
-            d="M448 1472q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm644-420l-682 682q-37 37-90 37-52 0-91-37l-106-108q-38-36-38-90 0-53 38-91l681-681q39 98 114.5 173.5t173.5 114.5zm634-435q0 39-23 106-47 134-164.5 217.5t-258.5 83.5q-185 0-316.5-131.5t-131.5-316.5 131.5-316.5 316.5-131.5q58 0 121.5 16.5t107.5 46.5q16 11 16 28t-16 28l-293 169v224l193 107q5-3 79-48.5t135.5-81 70.5-35.5q15 0 23.5 10t8.5 25z"></path>
-        </svg>
-      </span>
-      <h2>Kompleksowość</h2>
-      <p>Przeglądy, diagnostyka i naprawy mechaniczne i elektromechaniczne. Serwis klimatyzacji i montaż akcesoriów.
-        Wszystkie marki samochodów.</p>
-    </div>
-
-    <div class="content-item">
-      <span class="content-item-icon">
-        <svg width="64" height="64" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path
-          d="M1472 930v318q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h832q63 0 117 25 15 7 18 23 3 17-9 29l-49 49q-10 10-23 10-3 0-9-2-23-6-45-6h-832q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-254q0-13 9-22l64-64q10-10 23-10 6 0 12 3 20 8 20 29zm231-489l-814 814q-24 24-57 24t-57-24l-430-430q-24-24-24-57t24-57l110-110q24-24 57-24t57 24l263 263 647-647q24-24 57-24t57 24l110 110q24 24 24 57t-24 57z"></path>
-        </svg>
-      </span>
-      <h2>Rzetelność</h2>
-      <p>Tylko niezbędne naprawy w najkrótszym możliwym czasie. Rozsądne i przejrzyste ceny usług i części. Gwarancja na
-        wykonane prace.</p>
-    </div>
-
-    <div class="content-item">
-      <span class="content-item-icon">
-        <svg width="64" height="64" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path
-          d="M384 1344q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm1152-576q0-51-39-89.5t-89-38.5h-352q0-58 48-159.5t48-160.5q0-98-32-145t-128-47q-26 26-38 85t-30.5 125.5-59.5 109.5q-22 23-77 91-4 5-23 30t-31.5 41-34.5 42.5-40 44-38.5 35.5-40 27-35.5 9h-32v640h32q13 0 31.5 3t33 6.5 38 11 35 11.5 35.5 12.5 29 10.5q211 73 342 73h121q192 0 192-167 0-26-5-56 30-16 47.5-52.5t17.5-73.5-18-69q53-50 53-119 0-25-10-55.5t-25-47.5q32-1 53.5-47t21.5-81zm128-1q0 89-49 163 9 33 9 69 0 77-38 144 3 21 3 43 0 101-60 178 1 139-85 219.5t-227 80.5h-129q-96 0-189.5-22.5t-216.5-65.5q-116-40-138-40h-288q-53 0-90.5-37.5t-37.5-90.5v-640q0-53 37.5-90.5t90.5-37.5h274q36-24 137-155 58-75 107-128 24-25 35.5-85.5t30.5-126.5 62-108q39-37 90-37 84 0 151 32.5t102 101.5 35 186q0 93-48 192h176q104 0 180 76t76 179z"></path>
-        </svg>
-      </span>
-      <h2>Jakość</h2>
-      <p>Stale aktualizowany dostęp do informacji technicznych. Najnowocześniejsze urządzenia diagnostyczne.
-        Doświadczona załoga.</p>
+      <h3>Przeglądy okresowe</h3>
+      <p>Każdy samochód wymaga pewnego zakresu czynności umożliwiających jego bezawaryjną eksploatację. Producenci aut
+        tworzą szczegółowe harmonogramy niezbędnych czynności serwisowych dotyczących różnych podzespołów i układów
+        samochodowych. Czynności te powinny odbywać się w odpowiednich odstępach czasu lub przebiegu, aby zapewnić
+        prawidłowe funkcjonowanie i zapobiec przedwczesnemu zużyciu. Oferujemy obsługi techniczne zgodne z wymaganiami
+        producenta pojazdu, określonymi w jego dokumentacji serwisowej. Przeglądu samochodu powinno dokonywać się nie
+        rzadziej niż raz w roku lub co 15 - 20 tys. kilometrów. W trakcie przeglądu należy wymienić olej silnikowy i
+        filtr. Wymianaie mogą podlegać także filtry powietrza, paliwa i kabinowy. Sprawdzić należy stan płynu
+        hamulcowego i chłodzącego oraz skontrolować stan hamulców i zawieszenia. </p>
     </div>
   </div>
 
-  <div class="row gap10">
-    <div class="content-item col4">
-      <img alt="wymiana oleju" title="wymiana oleju"
-           src="img/wym-oleju-512x337.jpg"
-           class="i-amphtml-fill-content i-amphtml-replaced-content"/>
-      <h3>Przeglądy i diagnostyka</h3>
-      <p>Wymiana oleju i filtrów oraz okresowe
-        sprawdzenie stanu technicznego pojazdu.</p>
-    </div>
+  <div class="row">
+    <div class="content-item">
+      <h3>Diagnostyka komputerowa</h3>
+      <p>Dzięki wykorzystaniu diagnoskopu najnowszej generacji, możemy zaoferować diagnostykę komputerową samochodów
+        wszystkich marek, polegającą na odczytaniu, zdiagnozowaniu i ewentualnym usunięciu zapisanych błędów:</p>
 
-    <div class="content-item col4">
-      <img alt="układ hamulcowy" title="układ hamulcowy"
-           src="img/podglad-16-512x384.jpg"/>
-      <h3>Naprawy mechaniczne</h3>
-      <p>Naprawa lub wymiana uszkodzonych częsci i podzespołów.</p>
-    </div>
-
-    <div class="content-item col4">
-      <img alt="serwis klimatyzacji" title="serwis klimatyzacji"
-           src="img/podglad-21m-512x341.jpg"/>
-      <h3>Serwis klimatyzacji</h3>
+      <ul>
+        <li>parametrów pracy silnika,</li>
+        <li>systemów bezpieczeństwa (ABS, SRS, ASR, ESP i inne),</li>
+        <li>klimatyzacji/ogrzewania - systemów komfortu (elektryczne lusterka, centralny zamek, podgrzewane fotele,
+          elektrycznie podnoszone szyby, szyberdach i inne).
+        </li>
+      </ul>
       <p>
-        Uzupełnianie, czyszczenie i naprawa klimatyzacji samochodowych.</p>
-    </div>
-
-    <div class="content-item col4">
-      <img alt="blokada alkoholowa" title="blokada alkoholowa" src="img/720-auto-190x142.jpg"/>
-      <h3>Blokady alkoholowe</h3>
-      <p>Montaż atestowanych blokad alkoholowych umożliwiających odzyskanie prawa jazdy.</p>
+        Należy jednakże pamiętać, że samo podłączenie diagnoskopu z reguły nie rozwiązuje problemu, a jedynie służy
+        sprawnemu zdiagnozowaniu nieprawidłowości. Naprawa wykrytych usterek może wymagać dalszych czynności.
+      </p>
     </div>
   </div>
 
   <div class="row">
-    <iframe class="gmap"
-            src="https://maps.google.com/maps?q=MWM%20Carmaster&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-            scrolling="no" marginheight="0" marginwidth="0"></iframe>
-
+    <div class="content-item">
+      <h3>Naprawy mechaniczne</h3>
+      <p>Świadczymy pełną gamę usług z zakresu napraw mechanicznych samochodów.</p>
+      <p>Oferujemy:</p>
+      <ul>
+        <li>naprawy zawieszenia</li>
+        <li>naprawy układu hamulcowego</li>
+        <li>naprawy układu przeniesienia napędu</li>
+        <li>naprawy układu kierowniczego</li>
+        <li>naprawy układów zapłonowych</li>
+        <li>wymiany rozrządu</li>
+      </ul>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="content-item">
+      <h3>Serwis klimatyzacji</h3>
+      <p>Klimatyzacja w samochodzie, nawet jeśli wydaje się całkowicie sprawna, wymaga przynajmniej raz do roku wykonana
+        czynności serwisowych. Przez pory gumowych przewodów i uszczelki może ubywać w ciągu roku nawet 15% czynnika
+        chłodzącego, i to w przypadku braku wykrywalnych nieszczelności. Ubytki czynnika chłodzącego powodują nie tylko
+        zmniejszenie wydajności układu. Z gazem wymieszany jest olej smarujący kompresor klimatyzacji oraz zawory
+        układu. Zatarcie tych elementów może doprowadzić do bardzo kosztownych usterek.</p>
+      <p>
+        Standardowa obsługa polega na podłączeniu automatycznego urządzenia do obsługi klimatyzacji. Urządzenie odsysa
+        stary czynnik chłodzący i olej, usuwa wilgoć, uzupełnia układ świeżym czynnikiem i olejem. Producenci samochodów
+        w precyzyjny sposób określają ilość czynnika i oleju niezbędnego do prawidłowego funkcjonowania układu.
+        Niezwykle istotne jest, aby przestrzegać tych zaleceń i nie uzupełniać układu „na oko”.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="content-item">
+      <h3>Blokady alkoholowe</h3>
+      <p>Jesteśmy autoryzowanym przedstawicielem firmy AutoWatch Polska, oferującej certyfikowane blokady
+        antyalkoholowe. Nasze urządzenia spełniają wymagania ustawowe, niezbędne do odzyskania utraconego prawa jazdy.
+        Blokady antyalkoholowe są również często wykorzystywane przez administratorów flot samochodowych do zapewnienia
+        bezpieczeństwa użytkowania samochodów firmowych.</p>
+    </div>
+  </div>
+
 
 </section>
 
