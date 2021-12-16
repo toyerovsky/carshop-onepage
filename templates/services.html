@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section ul {
+            margin: 0;
+            list-style-type: "- ";
+            padding-left: 1em;
+        }
+
+        .mobile-navigation ul {
+            flex-direction: column;
+        }
+
+        .mobile-navigation ul li a {
+            line-height: 3em;
+            font-size: 1.3em;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow-y: scroll;
+            display: flex;
+            background: #fff;
+            justify-content: space-between;
+            font-size: 22px;
+            padding-top: 0.25em;
+            padding-left: 0.75em;
+            min-height: 80px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+
+        ul.navigation-links {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+            padding-left: 1em;
+        }
+
+        ul.navigation-links li {
+            padding: 0 1em 0 1em;
+            text-align: center;
+        }
+
+        ul.navigation-links a:hover, ul.navigation-links a:focus {
+            color: #4d4d4d;
+        }
+
+        p, li, a {
+            color: #15181b;
+            line-height: 1.7;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            max-width: 900px;
+            margin: 1em auto;
+        }
+
+        .subcontent p {
+            font-size: 1.4em;
+        }
+
+        footer {
+            display: flex;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            background-color: #04262b;
+            color: #efefef;
+        }
+
+        footer a {
+            color: #efefef;
+        }
+
+        .content-item {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+
+        .content-item p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item h2, .content-item h3 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .content-item h3 {
+            font-weight: 300;
+            font-size: 1.6em;
+        }
+
+        .content-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .row {
+                max-width: 720px;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            .row {
+                max-width: 960px;
+            }
+
+            .content-item {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+        }
+    </style>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="content-item">
+                <p>Obsługujemy samochody wszystkich marek w zakresie napraw mechanicznych i elektrycznych. Diagnozujemy
+                    i usuwamy
+                    usterki wszystkich układów samochodowych. Wykonujemy bieżące obsługi techniczne z wymianą oleju i
+                    filtrów.
+                    Montujemy akcesoria i dodatkowe wyposażenie pojazdów. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <h3>Przeglądy okresowe</h3>
+                <p>Każdy samochód wymaga pewnego zakresu czynności umożliwiających jego bezawaryjną eksploatację.
+                    Producenci aut
+                    tworzą szczegółowe harmonogramy niezbędnych czynności serwisowych dotyczących różnych podzespołów i
+                    układów
+                    samochodowych. Czynności te powinny odbywać się w odpowiednich odstępach czasu lub przebiegu, aby
+                    zapewnić
+                    prawidłowe funkcjonowanie i zapobiec przedwczesnemu zużyciu. Oferujemy obsługi techniczne zgodne z
+                    wymaganiami
+                    producenta pojazdu, określonymi w jego dokumentacji serwisowej. Przeglądu samochodu powinno
+                    dokonywać się nie
+                    rzadziej niż raz w roku lub co 15 - 20 tys. kilometrów. W trakcie przeglądu należy wymienić olej
+                    silnikowy i
+                    filtr. Wymianaie mogą podlegać także filtry powietrza, paliwa i kabinowy. Sprawdzić należy stan
+                    płynu
+                    hamulcowego i chłodzącego oraz skontrolować stan hamulców i zawieszenia. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <h3>Diagnostyka komputerowa</h3>
+                <p>Dzięki wykorzystaniu diagnoskopu najnowszej generacji, możemy zaoferować diagnostykę komputerową
+                    samochodów
+                    wszystkich marek, polegającą na odczytaniu, zdiagnozowaniu i ewentualnym usunięciu zapisanych
+                    błędów:</p>
+
+                <ul>
+                    <li>parametrów pracy silnika,</li>
+                    <li>systemów bezpieczeństwa (ABS, SRS, ASR, ESP i inne),</li>
+                    <li>klimatyzacji/ogrzewania - systemów komfortu (elektryczne lusterka, centralny zamek, podgrzewane
+                        fotele,
+                        elektrycznie podnoszone szyby, szyberdach i inne).
+                    </li>
+                </ul>
+                <p>
+                    Należy jednakże pamiętać, że samo podłączenie diagnoskopu z reguły nie rozwiązuje problemu, a
+                    jedynie służy
+                    sprawnemu zdiagnozowaniu nieprawidłowości. Naprawa wykrytych usterek może wymagać dalszych
+                    czynności.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <h3>Naprawy mechaniczne</h3>
+                <p>Świadczymy pełną gamę usług z zakresu napraw mechanicznych samochodów.</p>
+                <p>Oferujemy:</p>
+                <ul>
+                    <li>naprawy zawieszenia</li>
+                    <li>naprawy układu hamulcowego</li>
+                    <li>naprawy układu przeniesienia napędu</li>
+                    <li>naprawy układu kierowniczego</li>
+                    <li>naprawy układów zapłonowych</li>
+                    <li>wymiany rozrządu</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <h3>Serwis klimatyzacji</h3>
+                <p>Klimatyzacja w samochodzie, nawet jeśli wydaje się całkowicie sprawna, wymaga przynajmniej raz do
+                    roku wykonana
+                    czynności serwisowych. Przez pory gumowych przewodów i uszczelki może ubywać w ciągu roku nawet 15%
+                    czynnika
+                    chłodzącego, i to w przypadku braku wykrywalnych nieszczelności. Ubytki czynnika chłodzącego
+                    powodują nie tylko
+                    zmniejszenie wydajności układu. Z gazem wymieszany jest olej smarujący kompresor klimatyzacji oraz
+                    zawory
+                    układu. Zatarcie tych elementów może doprowadzić do bardzo kosztownych usterek.</p>
+                <p>
+                    Standardowa obsługa polega na podłączeniu automatycznego urządzenia do obsługi klimatyzacji.
+                    Urządzenie odsysa
+                    stary czynnik chłodzący i olej, usuwa wilgoć, uzupełnia układ świeżym czynnikiem i olejem.
+                    Producenci samochodów
+                    w precyzyjny sposób określają ilość czynnika i oleju niezbędnego do prawidłowego funkcjonowania
+                    układu.
+                    Niezwykle istotne jest, aby przestrzegać tych zaleceń i nie uzupełniać układu „na oko”.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <h3>Blokady alkoholowe</h3>
+                <p>Jesteśmy autoryzowanym przedstawicielem firmy AutoWatch Polska, oferującej certyfikowane blokady
+                    antyalkoholowe. Nasze urządzenia spełniają wymagania ustawowe, niezbędne do odzyskania utraconego
+                    prawa jazdy.
+                    Blokady antyalkoholowe są również często wykorzystywane przez administratorów flot samochodowych do
+                    zapewnienia
+                    bezpieczeństwa użytkowania samochodów firmowych.</p>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}

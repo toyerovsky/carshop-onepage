@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section ul {
+            margin: 0;
+            list-style-type: "- ";
+            padding-left: 1em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+
+        p, li, a {
+            color: #15181b;
+            line-height: 1.7;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            max-width: 900px;
+            margin: 1em auto;
+        }
+
+        .subcontent {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            font-size: 0.8em;
+            color: grey;
+        }
+
+        .content-item {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+
+        .content-item p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .content-item h2, .content-item h3 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .content-item h3 {
+            font-weight: 300;
+            font-size: 1.6em;
+        }
+
+        .content-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .row {
+                max-width: 720px;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            .row {
+                max-width: 960px;
+            }
+
+            .content-item {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+        }
+    </style>
+
+    <section class="main-content">
+        {% for post in post_list %}
+            <div class="row">
+                <div class="content-item">
+                    <h3>{{ post.title }}</h3>
+                    <p class="subcontent">{{ post.created_on }}</p>
+                    <p>{{ post.content | slice:":200" }}...</p>
+                    <a href="{% url 'news_detail' post.slug %}">Czytaj więcej &rarr;</a>
+                <hr/>
+                </div>
+            </div>
+        {% endfor %}s
+    </section>
+
+{% endblock content %}
