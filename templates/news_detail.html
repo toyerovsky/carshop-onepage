@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section ul {
+            margin: 0;
+            list-style-type: "- ";
+            padding-left: 1em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+
+        p, li, a {
+            color: #15181b;
+            line-height: 1.7;
+        }
+
+        .content-item p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .content-item h2, .content-item h3 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .content-item h3 {
+            margin: 0;
+            font-weight: 300;
+            font-size: 1.6em;
+        }
+
+        .content-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .header-icon {
+            font-size: 1.6em;
+        }
+    </style>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="content-item">
+                <div class="header-container">
+                    <a href="{% url 'news' %}"> <i class="header-icon bi bi-arrow-left-circle"></i></a>
+                    <h1>{{ post.title }}</h1>
+                </div>
+
+                <span class="caption">{{ post.created_on }}</span>
+                {{ post.content | safe }}</div>
+        </div>
+    </section>
+{% endblock content %}

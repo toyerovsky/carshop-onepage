@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -32,15 +31,6 @@
             margin: 1em auto;
         }
 
-        .subcontent {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            font-size: 0.8em;
-            color: grey;
-        }
-
         .content-item {
             display: flex;
             flex-direction: column;
@@ -58,6 +48,7 @@
         }
 
         .content-item h3 {
+            margin: 0;
             font-weight: 300;
             font-size: 1.6em;
         }
@@ -66,6 +57,38 @@
             width: 100%;
             height: auto;
             margin-bottom: 1em;
+        }
+
+        .btn-more {
+            padding: 8px;
+        }
+
+        .more-container {
+            display: flex;
+            justify-content: end;
+        }
+
+        .ml-sm {
+            padding-left: 4px;
+        }
+
+        .avatar {
+            font-size: 0.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            margin-right: 16px;
+            padding: 8px;
+            color: #efefef;
+            background: #4fa8ff;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
 
         @media only screen and (max-width: 768px) {
@@ -88,18 +111,26 @@
         }
     </style>
 
-    <section class="main-content">
+    <section>
         {% for post in post_list %}
             <div class="row">
                 <div class="content-item">
-                    <h3>{{ post.title }}</h3>
-                    <p class="subcontent">{{ post.created_on }}</p>
-                    <p>{{ post.content | slice:":200" }}...</p>
-                    <a href="{% url 'news_detail' post.slug %}">Czytaj więcej &rarr;</a>
-                <hr/>
+                    <div class="title-container">
+                        <span class="avatar">MWM</span>
+                        <div>
+                            <h3>{{ post.title }}</h3>
+                            <span class="caption">{{ post.created_on }}</span>
+                        </div>
+                    </div>
+                    <p>{{ post.content | striptags | truncatewords:40}}</p>
+                    <div class="more-container">
+                        <a class="btn btn-more btn-secondary" href="{% url 'news_detail' post.slug %}">Czytaj więcej
+                            <i class="ml-sm bi bi-arrow-right"></i></a>
+                    </div>
+                    <hr/>
                 </div>
             </div>
-        {% endfor %}s
+        {% endfor %}
     </section>
 
 {% endblock content %}

@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section ul {
+            margin: 0;
+            list-style-type: "- ";
+            padding-left: 1em;
+        }
+
+        .mobile-navigation ul {
+            flex-direction: column;
+        }
+
+        .mobile-navigation ul li a {
+            line-height: 3em;
+            font-size: 1.3em;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow-y: scroll;
+            display: flex;
+            background: #fff;
+            justify-content: space-between;
+            font-size: 22px;
+            padding-top: 0.25em;
+            padding-left: 0.75em;
+            min-height: 80px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+
+        ul.navigation-links {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+            padding-left: 1em;
+        }
+
+        ul.navigation-links li {
+            padding: 0 1em 0 1em;
+            text-align: center;
+        }
+
+        ul.navigation-links a:hover, ul.navigation-links a:focus {
+            color: #4d4d4d;
+        }
+
+        p, li, a {
+            color: #15181b;
+            line-height: 1.7;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            max-width: 1000px;
+            margin: 2em auto;
+        }
+
+        .subcontent p {
+            font-size: 1.4em;
+        }
+
+        footer {
+            display: flex;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            background-color: #04262b;
+            color: #efefef;
+        }
+
+        footer a {
+            color: #efefef;
+        }
+
+        .content-item {
+            display: flex;
+            flex-direction: row;
+            text-align: justify;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-item p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item h2, .content-item h3 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .content-item h3 {
+            font-weight: 300;
+            font-size: 1.6em;
+        }
+
+        .content-item img {
+            width: auto;
+            max-height: 650px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .row {
+                max-width: 720px;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            .content-item img {
+                width: 80%;
+                height: auto;
+            }
+
+            .content-item {
+                flex-direction: column;
+            }
+
+            .reverse {
+                flex-direction: column;
+            }
+
+            .row {
+                max-width: 960px;
+            }
+
+            .content-item {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+        }
+    </style>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="content-item">
+                <p>Jesteśmy autoryzowanym warsztatem samochodowym sieci BOSCH CAR SERVICE w Kielcach. Koncern BOSCH jest
+                    wiodącym dostawcą części i akcesoriów dla przemysłu motoryzacyjnego. Dzięki temu dysponuje ogromną
+                    wiedzą i doświadczeniem w zakresie budowy i obsługi samochodów. Przynależność do sieci warsztatów
+                    BOSCH Car Service umożliwia nam korzystanie z tego źródła wiedzy za pomocą wyczerpującej
+                    dokumentacji technicznej, urządzeń diagnostycznych z bieżąco aktualizowanym oprogramowaniem oraz
+                    szerokiego zakresu szkoleń dla mechaników i pracowników Punktu Obsługi Klientów.
+                    BOSCH CAR SERVICE to również szereg sformalizowanych standardów jakości usług i obsługi Klienta, na
+                    bieżąco kontrolowanych przy pomocy audytów niezależnych organizacji certyfikujących oraz testów
+                    „tajemniczego klienta”. Gwarantuje to usługi warsztatowe na profesjonalnym poziomie.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <img src="{% static 'img/flagi-683x1024.jpg' %}" alt="mwm carmaster flagi"/>
+                <div>
+                    <h3>Kim jesteśmy?</h3>
+                    <p>Jesteśmy wielomarkowym serwisem samochodowym oferującym szeroki zakres usług. Należymy do
+                        autoryzowanej sieci serwisów BOSCH Car Service. Na rynku motoryzacyjnym działamy nieprzerwanie
+                        od
+                        ponad 25 lat. Jesteśmy zdeterminowani by osiągnąć cel, jakim jest świadczenie usług serwisowych
+                        o
+                        jakości autoryzowanych stacji w cenie warsztatu niezależnego. W naszej pracy jesteśmy otwarci na
+                        nowe koncepcje, technologie i produkty oraz staramy się systematycznie rozszerzać zakres
+                        świadczonych usług. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item reverse">
+                <img src="{% static 'img/pok-683x1024.jpg' %}" alt="mwm carmaster punkt obsługi klienta"/>
+                <div>
+                    <h3>Co robimy?</h3>
+                    <p>Obsługujemy samochody osobowe i dostawcze wszystkich marek w zakresie mechaniki i
+                        elektromechaniki
+                        pojazdowej. Diagnozujemy usterki przy pomocy najnowocześniejszego sprzętu diagnostycznego. W
+                        szczególności oferujemy usługi w zakresie napraw silników benzynowych i wysokoprężnych, układów
+                        hamulcowych i kierowniczych oraz elementów zawieszenia. Wykonujemy okresowe obsługi techniczne
+                        zgodnie z zaleceniami producentów pojazdów. Oferujemy możliwość serwisowania i napełniania
+                        klimatyzacji, wymiany i przechowania ogumienia oraz montażu akcesoriów samochodowych. Jesteśmy
+                        autoryzowanym punktem montażu blokad alkoholowych Autowatch. Dysponujemy Stacją Kontroli
+                        Pojazdów,
+                        holownikiem pomocy drogowej oraz myjnią samochodową.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content-item">
+                <img src="{% static 'img/kts-683x1024.jpg' %}" alt="hala warsztatowa"/>
+                <div>
+                    <h3>Jak to robimy?</h3>
+                    <p>Posiadamy wieloletnie doświadczenie, nowoczesne urządzenia diagnostyczne oraz dostęp do
+                        aktualnych
+                        informacji technicznych. Nasi pracownicy nieustannie podnoszą kwalifikacje na kursach i
+                        szkleniach
+                        organizowanych przez firmę BOSCH oraz producentów części zamiennych. Do napraw wykorzystujemy
+                        dokumentację diagnostyczną i techniczną zgodną z wymaganiami producenta pojazdu. Używamy tylko
+                        sprawdzonych części i materiałów o wysokiej jakości, które są dystrybuowane przez godnych
+                        zaufania
+                        dostawców. Na wykonane usługi udzielamy gwarancji. Zapewniamy usługi najwyższej jakości za
+                        przystępną cenę.</p></div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
