@@ -5,8 +5,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
+    <title>{% block title %} {% endblock %}</title>
+    <meta name="keywords" content="serwis,bosh,mechanik,warsztat,klimatyzacja,naprawa"/>
+    <meta name="description"
+          content="Szukasz dobrego mechanika samochodowego? Warsztatu godnego zaufania? Zajrzyj tutaj!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="">
@@ -14,9 +16,9 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
+    <link rel="shortcut icon" href="{% static 'img/bcs-logo-100x101.png' %}" type="image/x-icon">
     <link rel="manifest" href="{% static 'site.webmanifest' %}">
-    <link rel="apple-touch-icon" href="{% static 'icon.png' %}">
-    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{% static 'img/bcs-logo-100x101.png' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,7 +134,6 @@
         border-style: solid;
         font-style: normal;
         letter-spacing: 2px;
-        margin: .4rem .5rem;
         white-space: normal;
         transition: all .3s ease-in-out, box-shadow 2s ease-in-out, -webkit-box-shadow 2s ease-in-out;
         display: inline-flex;
@@ -260,17 +261,45 @@
         transition: color 0.2s;
     }
 
-    @media only screen and (max-width: 768px) {
+    section {
+        margin: 0 1.5em;
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .col4 {
+        width: 25%;
+    }
+
+    .gap10 {
+        gap: 1em;
+    }
+
+    .gap20 {
+        gap: 2em;
+    }
+
+    .my {
+        margin: 2em auto !important;
+    }
+
+    .mx {
+        margin: auto 2em !important;
+    }
+
+    @media only screen and (max-width: 1200px) {
         .row {
-            max-width: 720px;
-            flex-direction: column;
-            align-items: center;
+            max-width: 1000px;
         }
     }
 
     @media only screen and (max-width: 992px) {
         .row {
             max-width: 960px;
+            justify-content: center;
         }
 
         .hide-mobile {
@@ -281,22 +310,27 @@
             display: block;
         }
 
-        section {
-            margin-left: 4em;
-            margin-right: 4em;
-            text-align: center;
+        .wrap-sm {
+            flex-wrap: wrap;
         }
 
-        .subcontent {
-            margin-left: initial;
+        .col2-sm {
+            width: 45% !important;
         }
     }
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 768px) {
         .row {
-            max-width: 1000px;
+            max-width: 720px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .col2-sm {
+            width: 75% !important;
         }
     }
+
 </style>
 
 <div id="mask" class="mask display-none"></div>
