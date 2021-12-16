@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block title %} Floty {% endblock %}
+{% block content %}
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section ul {
+            margin: 0;
+            list-style-type: "- ";
+            padding-left: 1em;
+        }
+
+        .mobile-navigation ul {
+            flex-direction: column;
+        }
+
+        .mobile-navigation ul li a {
+            line-height: 3em;
+            font-size: 1.3em;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow-y: scroll;
+            display: flex;
+            background: #fff;
+            justify-content: space-between;
+            font-size: 22px;
+            padding-top: 0.25em;
+            padding-left: 0.75em;
+            min-height: 80px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+
+        ul.navigation-links {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+            padding-left: 1em;
+        }
+
+        ul.navigation-links li {
+            padding: 0 1em 0 1em;
+            text-align: center;
+        }
+
+        ul.navigation-links a:hover, ul.navigation-links a:focus {
+            color: #4d4d4d;
+        }
+
+        p, li, a {
+            color: #15181b;
+            line-height: 1.7;
+        }
+
+        .subcontent p {
+            font-size: 1.4em;
+        }
+
+        footer {
+            display: flex;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            background-color: #04262b;
+            color: #efefef;
+        }
+
+        footer a {
+            color: #efefef;
+        }
+
+        .content-item {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+
+        .content-item p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item h2, .content-item h3 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .content-item h3 {
+            font-weight: 300;
+            font-size: 1.6em;
+        }
+
+        .tabs-header a {
+            flex-grow: 1;
+            font-weight: 500;
+            font-size: 1.5em;
+            background: #a0a0a0;
+            padding: 25px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .tab-content li, .tab-content p, .tab-content a, .tab-content h3 {
+            color: #fff;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .tab-content ul {
+            list-style: none;
+        }
+
+        .form {
+            width: 100%;
+            padding: 4px;
+            background: #d5d5d5;
+        }
+
+        .accept-button {
+            padding: 8px;
+            font-size: 1.5em;
+        }
+
+    </style>
+
+    <section>
+        <div class="row">
+            <h1>Floty</h1>
+        </div>
+        <div class="row">
+            <div class="content-item">
+                <h3>Specjalne warunki dla Twojej firmy</h3>
+                <h3>Minimalizacja kosztów - maksymalizacja wygody</h3>
+                <p>Wiemy, że samochody firmowe to ważne narzędzie pracy. Muszą być zawsze sprawne i gotowe do drogi. Ich
+                    serwisowanie nie może być kosztowne, długotrwałe i wymagające dużego zaangażowania użytkownika.
+                </p>
+                <p>
+                    Proponujemy podpisanie umowy serwisowej, zapewniającej:
+                </p>
+                <ul>
+                    <li>priorytet przyjęcia do obsługi</li>
+                    <li>odroczone terminy płatności</li>
+                    <li>atrakcyjne upusty na części i usługi</li>
+                    <li>procedury autoryzacyjne zgodne z wymaganiami Klientów</li>
+                    <li>elektroniczną ewidencję obsługi pozwalającą szybko odtworzyć historię pojazdu</li>
+                </ul>
+                <p>
+                    oraz opcjonalnie:
+                </p>
+                <ul>
+                    <li>usługę „door to door”</li>
+                    <li>samochód zastępczy na czas naprawy</li>
+                    <li>zbiorcze fakturowanie</li>
+                </ul>
+                <p>
+                    Jesteśmy również otwarci na indywidualne rozwiązania dostosowane do wymagań Klientów.
+                    Jeżeli Twoja firma posiada ponad 5 samochodów i chciałbyś otrzymać specjalną ofertę, skontaktuj się
+                    z nami za pomocą poniższego formularza.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="form">
+        <div class="row gap10 flex-wrap width30">
+            <div class="row fit gap10">
+                <input class="col-3" name="name" type="text" placeholder="Imię i nazwisko"/>
+                <input class="col-3" name="phone" type="tel" placeholder="Telefon"/>
+                <input class="col-3" name="email" type="email" placeholder="E-mail"/></div>
+                <textarea class="col-12" name="message" placeholder="Wiadomość"></textarea>
+                <a href="#" class="btn btn-primary fit accept-button">Wyślij</a>
+        </div>
+    </div>
+
+{% endblock %}
