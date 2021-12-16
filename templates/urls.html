@@ -1,7 +1,22 @@
-<li><a href="{% url 'index' %}">Start</a></li>
-<li><a href="{% url 'services' %}">Usługi</a></li>
-<li><a href="{% url 'prices' %}">Cennik</a></li>
-<li><a href="{% url 'news' %}">Aktualności</a></li>
-<li><a href="{% url 'fleets' %}">Floty</a></li>
-<li><a href="{% url 'about' %}">O nas</a></li>
-<li><a href="{% url 'contact' %}">Kontakt</a></li>
+{% url 'index' as index_url %}
+{% url 'services' as services_url %}
+{% url 'prices' as prices_url %}
+{% url 'news' as news_url %}
+{% url 'fleets' as fleets_url %}
+{% url 'about' as about_url %}
+{% url 'contact' as contact_url %}
+
+<li><a {% if request.path == index_url %} class="navigation-link-active"{% endif %} href="{{ index_url }}">Start</a>
+</li>
+<li><a {% if request.path == services_url %} class="navigation-link-active"{% endif %}
+                                             href="{{ services_url }}">Usługi</a></li>
+<li><a {% if request.path == prices_url %} class="navigation-link-active"{% endif %} href="{{ prices_url }}">Cennik</a>
+</li>
+<li><a {% if request.path == news_url %} class="navigation-link-active"{% endif %} href="{{ news_url }}">Aktualności</a>
+</li>
+<li><a {% if request.path == fleets_url %} class="navigation-link-active"{% endif %} href="{{ fleets_url }}">Floty</a>
+</li>
+<li><a {% if request.path == about_url %} class="navigation-link-active"{% endif %} href="{{ about_url }}">O nas</a>
+</li>
+<li><a {% if request.path == contact_url %} class="navigation-link-active"{% endif %}
+                                            href="{{ contact_url }}">Kontakt</a></li>

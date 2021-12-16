@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section ul {
+            margin: 0;
+            list-style-type: "- ";
+            padding-left: 1em;
+        }
+
+        .mobile-navigation ul {
+            flex-direction: column;
+        }
+
+        .mobile-navigation ul li a {
+            line-height: 3em;
+            font-size: 1.3em;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow-y: scroll;
+            display: flex;
+            background: #fff;
+            justify-content: space-between;
+            font-size: 22px;
+            padding-top: 0.25em;
+            padding-left: 0.75em;
+            min-height: 80px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+
+        ul.navigation-links {
+            display: flex;
+            list-style-type: none;
+            flex-wrap: wrap;
+            padding-left: 1em;
+        }
+
+        ul.navigation-links li {
+            padding: 0 1em 0 1em;
+            text-align: center;
+        }
+
+        ul.navigation-links a:hover, ul.navigation-links a:focus {
+            color: #4d4d4d;
+        }
+
+        p, li, a {
+            color: #15181b;
+            line-height: 1.7;
+        }
+
+        .subcontent p {
+            font-size: 1.4em;
+        }
+
+        footer {
+            display: flex;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            background-color: #04262b;
+            color: #efefef;
+        }
+
+        footer a {
+            color: #efefef;
+        }
+
+        .content-item {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+
+        .content-item p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item li {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .content-item h2, .content-item h3 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .content-item h3 {
+            font-weight: 300;
+            font-size: 1.6em;
+        }
+
+        .content-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        .tabs-header {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .tabs-header a {
+            flex-grow: 1;
+            font-weight: 500;
+            font-size: 1.5em;
+            background: #a0a0a0;
+            padding: 25px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .tabs-container {
+            display: flex;
+            flex-direction: column;
+            background: #04262b;
+        }
+
+        .tab-content {
+            margin: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tab-content li, .tab-content p, .tab-content a, .tab-content h3 {
+            color: #fff;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .tab-content ul {
+            list-style: none;
+        }
+
+        .tabs {
+            width: 100%;
+            padding: 4px;
+            background: #a0a0a0;
+        }
+
+        .tab-active {
+            background: #04262b !important;
+        }
+
+    </style>
+
+    <section>
+        <div class="row">
+            <div class="content-item">
+                <h1>Cennik</h1>
+                <p>Ceny usług ustalane są na podstawie katalogów norm czasowych opracowanych przez producentów
+                    samochodów. Pozwala to z góry przewidzieć ile czasu powinna zająć dana naprawa i jaki będzie jej
+                    koszt. Ceny operacji mogą się różnić w zależności od marki i modelu pojazdu. Przed przystąpieniem do
+                    naprawy, na życzenie Klienta sporządzamy szacunkowy kosztorys dla konkretnego samochodu.</p>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <div class="tabs">
+            <div class="row">
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <a id="tab-basic" onclick="changeTab('basic')" class="tab-active" href="javascript:void(0)">Usługi
+                            podstawowe</a>
+                        <a id="tab-air-conditioning" onclick="changeTab('air-conditioning')"
+                           href="javascript:void(0)">Serwis
+                            klimatyzacji</a>
+                        <a id="tab-blockage" onclick="changeTab('blockage')" href="javascript:void(0)">Blokada
+                            alkoholowa</a>
+                    </div>
+                    <div id="basic" class="tab-content">
+                        <p>Poniższy cennik przedstawia koszty najczęstszych usług w samochodach osobowych
+                            popularnych
+                            marek. Ceny brutto, nie zawierają kosztów części zamiennych.</p>
+                        <ul>
+                            <li>wymiana paska rozrządu: od 150,- PLN</li>
+                            <li>wymiana filtra oleju i oleju: od 20,- PLN</li>
+                            <li>wymiana filtra powietrza: od 15,- PLN</li>
+                            <li>wymiana kompletu świec zapłonowych: od 40,- PLN</li>
+                            <li>wymiana filtra kabinowego od: 15,- PLN</li>
+                            <li>wymiana cieczy chłodzącej: od 35,- PLN</li>
+                            <li>wymiana płynu hamulcowego: od 60,- PLN</li>
+                            <li>wymiana klocków hamulcowych przód: od 50,- PLN</li>
+                            <li>wymiana tarcz hamulcowych przód: od 70,- PLN</li>
+                            <li>diagnostyka komputerowa: 80,- PLN</li>
+                        </ul>
+                    </div>
+                    <div id="air-conditioning" class="tab-content hidden">
+                        <p>Pakiet serwisowy klimatyzacji obejmuje:</p>
+                        <ul>
+
+                            <li>odessanie czynnika chłodzącego z układu,</li>
+                            <li>kontrolę szczelności układu urządzeniem serwisowym,</li>
+                            <li>uzupełnienie czynnika chłodzącego zgodnie z zaleceniami producenta auta,</li>
+                            <li>wprowadzenie do układu środka smarnego konserwującego sprężarkę klimatyzacji,</li>
+                            <li>ozonowanie,</li>
+                        </ul>
+
+                        <h3>Cena pakietu: 100,- zł + 30zł za 100g uzupełnionego czynnika chłodzącego.</h3>
+
+                        <p>Ilość potrzebnego do uzupełnienia gazu można określić dopiero po podłączeniu urządzenia i
+                            odessaniu znajdującego się w układzie gazu. Znacznie upraszczając, możnna przyjąć, że w
+                            samochodach wyprodukowanych przed 2005r. układy klimatyzacji miały pojemność ok.
+                            650-750g. W
+                            samochodach nowszych pojemność ta zmniejszyłą się do 450-550g. Sporadyczne są sytuacje,
+                            gdy
+                            układ jest całkowicie pusty. W takiej sytuacji, przed napełnieniem zawsze zalecamy
+                            dodatkowe
+                            sprawdzenie szczelnośći.</p>
+
+                        <h3>Średni całkowity koszt usługi wynosi około 150 zł dla samochodów nowszych i około 200 zł
+                            dla
+                            aut
+                            starszych.</h3>
+
+                        <p>Inne czynności, np.:</p>
+                        <ul>
+                            <li>lokalizacja usterek i nieszczelności,</li>
+                            <li>naprawa lub wymiana uszkodzonych elementów,</li>
+                            <li>wymiana filtra kabinowego,</li>
+                            <li>dezynfekcja chemiczna,</li>
+                            <li>wymagają dodatkowego zlecenia.</li>
+                        </ul>
+                    </div>
+                    <div id="blockage" class="tab-content hidden">
+                        <p>Dzierżawa urządzenia na okres powyżej 6 miesięcy:</p>
+                        <ul>
+                            <li>opłata miesięczna 98,40 PLN</li>
+                            <li>pierwsza kalibracja 246,- PLN</li>
+                            <li>montaż 615,- PLN</li>
+                        </ul>
+                        <p>
+                            Przy zawarciu umowy dzierżawy z góry pobierana jest opłata za kalibrację i trzy pierwsze
+                            opłaty
+                            miesięczne (łącznie 550,- zł). Płatność kolejnych rat przypada od czwartego miesiąca
+                            umowy.
+                            Opłata za montaż urządzenia pobierana jest w dniu montażu.
+                        </p>
+                        <p>Dla najmu poniżej 6 miesięcy, miesięczny czynsz wynosi 183,27 PLN.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function changeTab(key) {
+            let tabContent = document.getElementById(key);
+            let tab = document.getElementById('tab-' + key);
+
+            let headers = document.getElementsByClassName('tabs-header')[0].children;
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].classList.remove('tab-active');
+            }
+
+            if (tab.classList.contains('tab-active')) {
+                tab.classList.remove('tab-active');
+            } else {
+                tab.classList.add('tab-active');
+            }
+
+            let contentElements = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < contentElements.length; i++) {
+                contentElements[i].classList.add('hidden');
+            }
+
+            tabContent.classList.remove('hidden');
+        }
+    </script>
+{% endblock %}

@@ -12,17 +12,16 @@ STATUS = (
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100, unique=True)
-    slug = models.CharField(max_length=50, unique=True)
+    title = models.CharField(max_length=100, unique=True, null=False, blank=False)
+    slug = models.CharField(max_length=50, unique=True, null=False, blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = models.TextField(null=False, blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-created_on']
-
 
     def __str__(self):
         return self.title

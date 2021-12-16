@@ -112,6 +112,10 @@
         color: #4d4d4d;
     }
 
+    .navigation-link-active {
+        color: #666;
+    }
+
     p, li, a {
         color: #15181b;
         line-height: 1.7;
@@ -173,7 +177,7 @@
     .row {
         display: flex;
         flex-direction: row;
-        max-width: 1140px;
+        max-width: 1100px;
         margin: 1em auto;
     }
 
@@ -242,6 +246,20 @@
         margin: 0;
     }
 
+    .footer-icons {
+        display: flex;
+        gap: 16px;
+    }
+
+    .footer-icons i {
+        font-size: 2em;
+    }
+
+    .footer-icons i:hover {
+        color: #999;
+        transition: color 0.2s;
+    }
+
     @media only screen and (max-width: 768px) {
         .row {
             max-width: 720px;
@@ -271,6 +289,12 @@
 
         .subcontent {
             margin-left: initial;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .row {
+            max-width: 1000px;
         }
     }
 </style>
@@ -336,8 +360,10 @@
             <span>25-705 Kielce</span>
             <span>ul. Krakowska 161</span>
             <span>tel. 605-101-100</span>
-            <span>carmaster@bosch-service.pl</span>
-            <a href="#">facebook.com/mwmbosch/</a>
+            <div class="footer-icons">
+                <a rel="nofollow noopener" href="https://www.facebook.com/mwmbosch/"><i class="bi bi-facebook"></i></a>
+                <a href="mailto:carmaster@bosch-service.pl"><i class="bi bi-envelope"></i></a>
+            </div>
         </div>
     </div>
 </footer>

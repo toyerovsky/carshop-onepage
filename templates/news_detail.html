@@ -15,6 +15,10 @@
             text-decoration: none;
         }
 
+        section {
+            min-height: 600px;
+        }
+
         section:first-of-type {
             margin-top: 120px;
         }
@@ -65,9 +69,8 @@
                     <a href="{% url 'news' %}"> <i class="header-icon bi bi-arrow-left-circle"></i></a>
                     <h1>{{ post.title }}</h1>
                 </div>
-
                 <span class="caption">{{ post.created_on }}</span>
-                {{ post.content | safe }}</div>
+                <span>{{ post.content | safe }}</span></div>
         </div>
     </section>
 {% endblock content %}
