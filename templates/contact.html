@@ -138,6 +138,34 @@
             font-size: 1.5em;
         }
 
+        .gmap {
+            width: 50%;
+        }
+
+        .contact-items {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 16px;
+            list-style: none;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        .contact-items li {
+            width: 45%;
+            display: flex;
+            gap: 16px;
+            color: #4fa8ff;
+            align-items: center;
+        }
+
+        .contact-items i {
+            font-size: 2em;
+        }
+
+
     </style>
 
     <section>
@@ -161,36 +189,40 @@
                     src="https://maps.google.com/maps?q=MWM%20Carmaster&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     frameborder="0"
                     scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            <div class="">
-                <ul>
-                    <li>
-                        <i class="bi bi-geo-alt"></i>
+
+            <ul class="contact-items">
+                <li>
+                    <i class="bi bi-geo-alt"></i>
+                    <div>
                         <p>MWM Carmaster s.c.</p>
                         <p>25-705 Kielce</p>
                         <p>ul. Krakowska 161</p>
-                    </li>
-                    <li>
-                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-clock"></i>
+                    <div>
                         <p>Godziny pracy:</p>
                         <p>Pn.-Pt.: 8.00-17.00</p>
                         <p>So.: nieczynne do odwołania</p>
-                    </li>
-                    <li>
-                        <i class="bi bi-phone"></i>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-phone"></i>
+                    <div>
                         <p>605-101-100</p>
                         <p>41 345-24-35</p>
-                    </li>
-                    <li>
-                        <i class="bi bi-credit-card"></i>
-                        <p>Akceptujemy karty płatnicze.</p>
-                    </li>
-                    <li>
-                        <i class="bi bi-envelope"></i>
-                        <p>carmaster@bosch-service.pl</p>
-                    </li>
-                </ul>
-            </div>
-
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-credit-card"></i>
+                    <p>Akceptujemy karty płatnicze.</p>
+                </li>
+                <li>
+                    <i class="bi bi-envelope"></i>
+                    <p>carmaster@bosch-service.pl</p>
+                </li>
+            </ul>
         </div>
     </section>
 
