@@ -157,14 +157,29 @@
             width: 45%;
             display: flex;
             gap: 16px;
-            color: #4fa8ff;
             align-items: center;
+        }
+
+        .contact-items li p {
+            margin: 0;
         }
 
         .contact-items i {
             font-size: 2em;
+            color: #4fa8ff;
         }
 
+        @media only screen and (max-width: 992px) {
+            .contact-items li {
+                width: 100%;
+            }
+
+            .gmap {
+                width: 100%;
+                min-height: 300px;
+                margin-bottom: 2em;
+            }
+        }
 
     </style>
 
@@ -216,23 +231,23 @@
                 </li>
                 <li>
                     <i class="bi bi-credit-card"></i>
-                    <p>Akceptujemy karty płatnicze.</p>
+                    <span>Akceptujemy karty płatnicze.</span>
                 </li>
                 <li>
                     <i class="bi bi-envelope"></i>
-                    <p>carmaster@bosch-service.pl</p>
+                    <span>carmaster@bosch-service.pl</span>
                 </li>
             </ul>
         </div>
     </section>
 
     <div class="form">
-        <div class="row gap10 flex-wrap width30">
+        <div class="row gap10 flex-wrap width50  width30-md">
             <div class="row fit gap10">
-                <input class="col-3" name="name" type="text" placeholder="Imię i nazwisko"/>
-                <input class="col-3" name="phone" type="tel" placeholder="Telefon"/>
-                <input class="col-3" name="email" type="email" placeholder="E-mail"/></div>
-            <textarea class="col-12" name="message" placeholder="Wiadomość"></textarea>
+                <input class="col12 col3-md" name="name" type="text" placeholder="Imię i nazwisko"/>
+                <input class="col12 col3-md" name="phone" type="tel" placeholder="Telefon"/>
+                <input class="col12 col3-md" name="email" type="email" placeholder="E-mail"/></div>
+            <textarea class="col12" name="message" placeholder="Wiadomość"></textarea>
             <a href="#" class="btn btn-primary fit accept-button">Wyślij</a>
         </div>
     </div>
