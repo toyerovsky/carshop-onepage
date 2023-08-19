@@ -21,7 +21,3 @@ class Fleets(generic.TemplateView):
 
 class About(generic.TemplateView):
     template_name = "about.html"
-
-
-class Contact(generic.TemplateView):
-    template_name = "contact.html"

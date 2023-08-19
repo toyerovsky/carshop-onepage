@@ -13,8 +13,8 @@ class PostStatus(models.IntegerChoices):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100, unique=True, null=False, blank=False)
-    slug = models.SlugField(max_length=50, unique=True, null=False, blank=False)
+    title = models.CharField(max_length=100, null=False, blank=False)
+    slug = models.SlugField(max_length=50, null=False, blank=False)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )

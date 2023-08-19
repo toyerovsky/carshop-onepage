@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "staticpages.apps.StaticpagesConfig",
     "django_summernote",
+    "contact_form.apps.ContactFormConfig",
 ]
 
 MIDDLEWARE = [

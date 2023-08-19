@@ -2,254 +2,257 @@
 {% block title %} Kontakt {% endblock %}
 {% block content %}
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
 
-        section ul {
-            margin: 0;
-            list-style-type: "- ";
-            padding-left: 1em;
-        }
+    section ul {
+        margin: 0;
+        list-style-type: "- ";
+        padding-left: 1em;
+    }
 
-        .mobile-navigation ul {
-            flex-direction: column;
-        }
+    .mobile-navigation ul {
+        flex-direction: column;
+    }
 
-        .mobile-navigation ul li a {
-            line-height: 3em;
-            font-size: 1.3em;
-        }
+    .mobile-navigation ul li a {
+        line-height: 3em;
+        font-size: 1.3em;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        overflow-y: scroll;
+        display: flex;
+        background: #fff;
+        justify-content: space-between;
+        font-size: 22px;
+        padding-top: 0.25em;
+        padding-left: 0.75em;
+        min-height: 80px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    section:first-of-type {
+        margin-top: 120px;
+    }
+
+    ul.navigation-links {
+        display: flex;
+        list-style-type: none;
+        flex-wrap: wrap;
+        padding-left: 1em;
+    }
+
+    ul.navigation-links li {
+        padding: 0 1em 0 1em;
+        text-align: center;
+    }
+
+    ul.navigation-links a:hover,
+    ul.navigation-links a:focus {
+        color: #4d4d4d;
+    }
+
+    p,
+    li,
+    a {
+        color: #15181b;
+        line-height: 1.7;
+    }
+
+    .subcontent p {
+        font-size: 1.4em;
+    }
+
+    footer {
+        display: flex;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: #04262b;
+        color: #efefef;
+    }
+
+    footer a {
+        color: #efefef;
+    }
+
+    .content-item {
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+    }
+
+    .content-item p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .content-item li {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .content-item h2,
+    .content-item h3 {
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .content-item h3 {
+        font-weight: 300;
+        font-size: 1.6em;
+    }
+
+    .tabs-header a {
+        flex-grow: 1;
+        font-weight: 500;
+        font-size: 1.5em;
+        background: #a0a0a0;
+        padding: 25px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .tab-content li,
+    .tab-content p,
+    .tab-content a,
+    .tab-content h3 {
+        color: #fff;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .tab-content ul {
+        list-style: none;
+    }
+
+    .form {
+        width: 100%;
+        padding: 4px;
+        background: #d5d5d5;
+    }
+
+    .accept-button {
+        padding: 8px;
+        font-size: 1.5em;
+    }
+
+    .gmap {
+        width: 50%;
+    }
+
+    .contact-items {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        list-style: none;
+        justify-content: center;
+        font-size: 1.2em;
+    }
+
+    .contact-items li {
+        width: 45%;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .contact-items li p {
+        margin: 0;
+    }
+
+    .contact-items i {
+        font-size: 2em;
+        color: #4fa8ff;
+    }
+
+    @media only screen and (max-width: 992px) {
+        .contact-items li {
             width: 100%;
-            overflow-y: scroll;
-            display: flex;
-            background: #fff;
-            justify-content: space-between;
-            font-size: 22px;
-            padding-top: 0.25em;
-            padding-left: 0.75em;
-            min-height: 80px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        section:first-of-type {
-            margin-top: 120px;
-        }
-
-        ul.navigation-links {
-            display: flex;
-            list-style-type: none;
-            flex-wrap: wrap;
-            padding-left: 1em;
-        }
-
-        ul.navigation-links li {
-            padding: 0 1em 0 1em;
-            text-align: center;
-        }
-
-        ul.navigation-links a:hover, ul.navigation-links a:focus {
-            color: #4d4d4d;
-        }
-
-        p, li, a {
-            color: #15181b;
-            line-height: 1.7;
-        }
-
-        .subcontent p {
-            font-size: 1.4em;
-        }
-
-        footer {
-            display: flex;
-            padding-top: 2em;
-            padding-bottom: 2em;
-            background-color: #04262b;
-            color: #efefef;
-        }
-
-        footer a {
-            color: #efefef;
-        }
-
-        .content-item {
-            display: flex;
-            flex-direction: column;
-            text-align: justify;
-        }
-
-        .content-item p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .content-item li {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .content-item h2, .content-item h3 {
-            text-transform: uppercase;
-            margin-bottom: 0;
-        }
-
-        .content-item h3 {
-            font-weight: 300;
-            font-size: 1.6em;
-        }
-
-        .tabs-header a {
-            flex-grow: 1;
-            font-weight: 500;
-            font-size: 1.5em;
-            background: #a0a0a0;
-            padding: 25px;
-            text-align: center;
-            color: #fff;
-        }
-
-        .tab-content li, .tab-content p, .tab-content a, .tab-content h3 {
-            color: #fff;
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        .tab-content ul {
-            list-style: none;
-        }
-
-        .form {
-            width: 100%;
-            padding: 4px;
-            background: #d5d5d5;
-        }
-
-        .accept-button {
-            padding: 8px;
-            font-size: 1.5em;
         }
 
         .gmap {
-            width: 50%;
+            width: 100%;
+            min-height: 300px;
+            margin-bottom: 2em;
         }
+    }
+</style>
 
-        .contact-items {
-            width: 50%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 16px;
-            list-style: none;
-            justify-content: center;
-            font-size: 1.2em;
-        }
-
-        .contact-items li {
-            width: 45%;
-            display: flex;
-            gap: 16px;
-            align-items: center;
-        }
-
-        .contact-items li p {
-            margin: 0;
-        }
-
-        .contact-items i {
-            font-size: 2em;
-            color: #4fa8ff;
-        }
-
-        @media only screen and (max-width: 992px) {
-            .contact-items li {
-                width: 100%;
-            }
-
-            .gmap {
-                width: 100%;
-                min-height: 300px;
-                margin-bottom: 2em;
-            }
-        }
-
-    </style>
-
-    <section>
-        <div class="row">
-            <h1>Kontakt</h1>
-        </div>
-        <div class="row">
-            <div class="content-item">
-                <p>Zachęcamy do telefonicznej rezerwacji terminu obsługi.
-                    Gwarantuje to przyjęcie do serwisu bez konieczności oczekiwania oraz pozwala nam, w miarę
-                    możliwości, przygotować wszystkie niezbędne części i materiały. Dzięki temu będziesz obsłużony
-                    najszybciej jak to możliwe.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="row">
-            <iframe class="gmap"
-                    src="https://maps.google.com/maps?q=MWM%20Carmaster&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    frameborder="0"
-                    scrolling="no" marginheight="0" marginwidth="0"></iframe>
-
-            <ul class="contact-items">
-                <li>
-                    <i class="bi bi-geo-alt"></i>
-                    <div>
-                        <p>MWM Carmaster s.c.</p>
-                        <p>25-705 Kielce</p>
-                        <p>ul. Krakowska 161</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="bi bi-clock"></i>
-                    <div>
-                        <p>Godziny pracy:</p>
-                        <p>Pn.-Pt.: 8.00-17.00</p>
-                        <p>So.: nieczynne do odwołania</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="bi bi-phone"></i>
-                    <div>
-                        <p>605-101-100</p>
-                        <p>41 345-24-35</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="bi bi-credit-card"></i>
-                    <span>Akceptujemy karty płatnicze.</span>
-                </li>
-                <li>
-                    <i class="bi bi-envelope"></i>
-                    <span>carmaster@bosch-service.pl</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="form">
-        <div class="row gap10 flex-wrap width50  width30-md">
-            <div class="row fit gap10">
-                <input class="col12 col3-md" name="name" type="text" placeholder="Imię i nazwisko"/>
-                <input class="col12 col3-md" name="phone" type="tel" placeholder="Telefon"/>
-                <input class="col12 col3-md" name="email" type="email" placeholder="E-mail"/></div>
-            <textarea class="col12" name="message" placeholder="Wiadomość"></textarea>
-            <a href="#" class="btn btn-primary fit accept-button">Wyślij</a>
+<section>
+    <div class="row">
+        <h1>Kontakt</h1>
+    </div>
+    <div class="row">
+        <div class="content-item">
+            <p>Zachęcamy do telefonicznej rezerwacji terminu obsługi.
+                Gwarantuje to przyjęcie do serwisu bez konieczności oczekiwania oraz pozwala nam, w miarę
+                możliwości, przygotować wszystkie niezbędne części i materiały. Dzięki temu będziesz obsłużony
+                najszybciej jak to możliwe.
+            </p>
         </div>
     </div>
+</section>
+
+<section>
+    <div class="row">
+        <iframe class="gmap" src="https://maps.google.com/maps?q=MWM%20Carmaster&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+        <ul class="contact-items">
+            <li>
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                    <p>MWM Carmaster s.c.</p>
+                    <p>25-705 Kielce</p>
+                    <p>ul. Krakowska 161</p>
+                </div>
+            </li>
+            <li>
+                <i class="bi bi-clock"></i>
+                <div>
+                    <p>Godziny pracy:</p>
+                    <p>Pn.-Pt.: 8.00-17.00</p>
+                    <p>So.: nieczynne do odwołania</p>
+                </div>
+            </li>
+            <li>
+                <i class="bi bi-phone"></i>
+                <div>
+                    <p>605-101-100</p>
+                    <p>41 345-24-35</p>
+                </div>
+            </li>
+            <li>
+                <i class="bi bi-credit-card"></i>
+                <span>Akceptujemy karty płatnicze.</span>
+            </li>
+            <li>
+                <i class="bi bi-envelope"></i>
+                <span>carmaster@bosch-service.pl</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<form method="POST" class="form">
+    {% csrf_token %}
+    <div class="row gap10 flex-wrap width50 width30-md">
+        <div class=" fit gap10"></div>
+        {{ form.as_p }}
+        <button class="btn btn-primary fit accept-button" type="submit">Wyślij</button>
+    </div>
+    </div>
+</form>
 
 {% endblock %}
