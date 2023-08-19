@@ -1,2 +1,5 @@
 # carshop-onepage
-A simple one-pager using django html and css
+A simple landing page using django, html and pure css.
+
+
+
